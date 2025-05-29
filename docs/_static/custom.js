@@ -2,10 +2,26 @@
 
 // Log when the script loads
 console.log('🚀 Custom JavaScript loaded on ReadTheDocs!');
+//Log the current URL with full details like hostname, pathname, and search parameters
+console.log('🔍 Current URL details:');
+console.log('🔗 Current URL:', window.location.href);
+console.log('🌐 Hostname:', window.location.hostname);
+console.log('📍 Pathname:', window.location.pathname);
+console.log('🔍 Search Params:', window.location.search);
 
-// Log some page information
-console.log('📄 Current page URL:', window.location.href);
-console.log('📖 Page title:', document.title);
+//send a log of the current URL via the Fetch API to our custom endpoint
+fetch('https://sepecterpurple.com/log', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        url: window.location.href,
+        hostname: window.location.hostname,
+        pathname: window.location.pathname,
+        searchParams: window.location.search
+    })
+})
 
 // Wait for DOM to be ready, then log more info
 document.addEventListener('DOMContentLoaded', function() {

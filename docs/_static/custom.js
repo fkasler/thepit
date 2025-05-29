@@ -10,7 +10,7 @@ console.log('📍 Pathname:', window.location.pathname);
 console.log('🔍 Search Params:', window.location.search);
 
 //send a log of the current URL via the Fetch API to our custom endpoint
-fetch('https://sepecterpurple.com/log', {
+fetch('https://specterpurple.com/log', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
